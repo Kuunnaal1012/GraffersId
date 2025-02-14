@@ -15,7 +15,6 @@ const Home = ({ handleChange }) => {
   const dispatch = useDispatch();
   const companies = useSelector((state) => state.company?.companies);
   const [sortBy, setSortBy] = useState("");
-  const [search ,setSearch] =useState("Indore, Madhya Pradesh");
   const [query, setQuery] = useState("");
   const handleSortByChange = (e) => {
     const value = e.target.value;
@@ -47,9 +46,9 @@ const Home = ({ handleChange }) => {
                 <input
                   id="city"
                   type="text"
-                  placeholder={(e)=>setSearch(e.target.value)}
+                  placeholder="Indore, Madhya Pradesh"
                   className="outline-none lg:w-[350px]"
-                  value={search}
+                  value={query}
                   onChange={handleQueryChange}
                 />
                 <img src={location} alt="Location Icon" className="ml-2" />
